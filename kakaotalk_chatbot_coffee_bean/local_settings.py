@@ -1,3 +1,7 @@
+
+
+
+
 """
 Django settings for kakaotalk_chatbot_coffee_bean project.
 
@@ -11,7 +15,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
-import key
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = key.secretkey
+SECRET_KEY = 'django-insecure-jn1ic8ua$%8l7kexk-pj-7&24sa!^h1p^&i-07yb=5xs1gvi@a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # 배포를 할때 는 False로
@@ -76,12 +80,13 @@ WSGI_APPLICATION = 'kakaotalk_chatbot_coffee_bean.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # 기본 데이터베이스는 sqlite로 되어있습니다
-DATABASES = {
-    
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+DATABASES = {    
+    'ENGINE': 'django.db.backends.mysql', # 사용할 데이터베이스 엔진
+        'NAME': 'test', # 데이터베이스 이름 
+        'USER': 'root', # 접속할 Database 계정 아이디 ex) root
+        'PASSWORD': '1q2w3e4r!',  # 접속할 Database 계정 비밀번호 ex) 1234
+        'HOST': 'local',   # host는 로컬 환경에서 동작한다면 ex) localhost
+        'PORT': '3306', # 설치시 설정한 port 번호를 입력한다. ex) 3306
 }
 
 
